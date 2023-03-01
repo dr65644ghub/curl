@@ -21,9 +21,16 @@
  * SPDX-License-Identifier: curl
  *
  ***************************************************************************/
-#include <sys/socket.h>
-#include <arpa/inet.h>
 #include "test.h"
+#ifdef HAVE_NETINET_IN_H
+#include <netinet/in.h>
+#endif
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_ARPA_INET_H
+#include <arpa/inet.h>
+#endif
 
 #include "memdebug.h"
 
